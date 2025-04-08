@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 # More robust CORS configuration
 CORS(app, resources={r"/*": {
-    "origins": "*",  # Allow all origins during development
+    # "origins": "*",  # Allow all origins during development
+    "origins": ["https://whoyou-gr3.onrender.com"],  # Allow only your frontend's origin (AD)
     "methods": ["GET", "POST", "OPTIONS"],
     "allow_headers": ["Content-Type", "Authorization"]
 }})
