@@ -16,12 +16,12 @@ CORS(app, resources={r"/*": {
 app.register_blueprint(routes)
 
 # Add CORS headers to all responses (belt and suspenders approach)
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
-    return response
+# @app.after_request
+# def after_request(response):
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+#     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+#     response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+#     return response
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
